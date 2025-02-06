@@ -3,6 +3,8 @@
 // Faculty: Jonathan Cruz
 // Purpose: Inventory managament application with a minimum of 10 elements in the collection.
 
+using System.Xml.Schema;
+
 namespace COMP003A.CodingAssignment4
 {
     internal class Program
@@ -94,11 +96,18 @@ namespace COMP003A.CodingAssignment4
                     Console.WriteLine("Inventory Summary: ");
                     for (int i = 0; i < productNames.Count; i++)
                     {
-                        Console.WriteLine($"{productNames[i]}"+$" {productQuantities[i]}\n");
-                        Console.WriteLine(productQuantities);
+                        Console.WriteLine($"{productNames[i]}"+$" {productQuantities[i]}");
                     }
-                }
 
+                    int totalProducts = productNames.Count;
+                    Console.WriteLine($"Total Products:{totalProducts}");
+
+                    int totalInventory = productQuantities.Sum();
+                    Console.WriteLine($"Total Quantity:{totalInventory}");
+
+
+
+                }
 
 
 
