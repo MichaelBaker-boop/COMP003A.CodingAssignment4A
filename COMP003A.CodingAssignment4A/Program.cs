@@ -44,11 +44,10 @@ namespace COMP003A.CodingAssignment4
 
                 if (menuSelection == 1)
                 {
-                    try
-                    {
+                    
                         Console.WriteLine("Name of product: ");
                         productNames.Add(Console.ReadLine());
-
+                    try {
                         Console.WriteLine("Enter the amount of product:");
                         productQuantities.Add(int.Parse(Console.ReadLine()));
 
@@ -58,6 +57,7 @@ namespace COMP003A.CodingAssignment4
                     {
                         Console.WriteLine("The input was invalid.");
                         Console.WriteLine(e.Message);
+
                     }
                 }
                 
@@ -92,7 +92,13 @@ namespace COMP003A.CodingAssignment4
                 if (menuSelection == 3)
                 {
                     Console.WriteLine("Inventory Summary: ");
+                    for (int i = 0; i < productNames.Count; i++)
+                    {
+                        Console.WriteLine($"{productNames[i]}"+$" {productQuantities[i]}\n");
+                        
+                    }
                 }
+
 
 
 
