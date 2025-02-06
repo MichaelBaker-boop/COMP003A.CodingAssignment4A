@@ -24,17 +24,14 @@ namespace COMP003A.CodingAssignment4
                 Console.WriteLine("3) View Inventory Summary.");
                 Console.WriteLine("4) Exit.");
 
-                try
+                try 
                 {
                     Console.Write("Enter the number of your choice: ");
                     menuSelection = int.Parse(Console.ReadLine());
-
                 }
-                catch (FormatException e)
+                catch
                 {
-                    Console.WriteLine("Invalid Input. Please enter a valid number.");
-
-                    throw;
+                    Console.WriteLine("The input was invalid.");
                 }
 
                 if (menuSelection == 1)
@@ -66,7 +63,7 @@ namespace COMP003A.CodingAssignment4
 
                 if (menuSelection == 3)
                 {
-                    Console.WriteLine("Inventory Summary:");
+                    Console.WriteLine("Inventory Summary: ");
                 }
 
                 if (menuSelection == 4)
