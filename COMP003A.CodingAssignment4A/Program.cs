@@ -25,11 +25,14 @@ namespace COMP003A.CodingAssignment4
                 Console.WriteLine("2) Update Product Quantity.");
                 Console.WriteLine("3) View Inventory Summary.");
                 Console.WriteLine("4) Exit.");
+
+
+
                 try 
                 {
                     Console.Write("Enter the number of your choice: ");
                     menuSelection = int.Parse(Console.ReadLine());
-                    if (menuSelection != 1 || menuSelection != 2 || menuSelection != 3 || menuSelection != 4) throw new Exception("Number must be between 1 and 4.");
+                    if (menuSelection != 1 && menuSelection != 2 && menuSelection != 3 && menuSelection != 4) throw new Exception("Number must be between 1 and 4.");
                 }
                 catch (Exception e)
                 {
@@ -37,26 +40,46 @@ namespace COMP003A.CodingAssignment4
                     Console.WriteLine(e.Message);
                 }
 
+
+
                 if (menuSelection == 1)
                 {
-                    Console.WriteLine("Name of product: ");
-                    productNames.Add(Console.ReadLine());
+                    try
+                    {
+                        Console.WriteLine("Name of product: ");
+                        productNames.Add(Console.ReadLine());
 
-                    Console.WriteLine("Enter the amount of product:");
-                    productQuantities.Add(int.Parse(Console.ReadLine()));
+                        Console.WriteLine("Enter the amount of product:");
+                        productQuantities.Add(int.Parse(Console.ReadLine()));
 
-                    Console.WriteLine("Product Added Successfully!\n");
+                        Console.WriteLine("Product Added Successfully!\n");
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("The input was invalid.");
+                        Console.WriteLine(e.Message);
+                    }
                 }
                 
+
+
                 if (menuSelection == 2)
                 {
                     Console.WriteLine("Enter the name of the product to update its quantity:");
                     int index = productNames.IndexOf(Console.ReadLine());
                     if (index != -1)
                     {
-                        Console.WriteLine("Enter the new amount of product:");
-                        productQuantities[index] = int.Parse(Console.ReadLine());
-                        Console.WriteLine("Product updated successfully!\n");
+                        try
+                        {
+                            Console.WriteLine("Enter the new amount of product:");
+                            productQuantities[index] = int.Parse(Console.ReadLine());
+                            Console.WriteLine("Product updated successfully!\n");
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine("The input was invalid.");
+                            Console.WriteLine(e.Message);
+                        }
                     }
                     else
                     {
@@ -64,10 +87,14 @@ namespace COMP003A.CodingAssignment4
                     }
                 }
 
+
+
                 if (menuSelection == 3)
                 {
                     Console.WriteLine("Inventory Summary: ");
                 }
+
+
 
                 if (menuSelection == 4)
                 {
