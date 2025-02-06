@@ -95,7 +95,7 @@ namespace COMP003A.CodingAssignment4
                     for (int i = 0; i < productNames.Count; i++)
                     {
                         Console.WriteLine($"{productNames[i]}"+$" {productQuantities[i]}\n");
-                        
+                        Console.WriteLine(productQuantities);
                     }
                 }
 
