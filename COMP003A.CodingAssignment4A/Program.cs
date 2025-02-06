@@ -30,7 +30,7 @@ namespace COMP003A.CodingAssignment4
 
                 try 
                 {
-                    Console.Write("Enter the number of your choice: ");
+                    Console.Write("Enter the number of your choice: \n");
                     menuSelection = int.Parse(Console.ReadLine());
                     if (menuSelection != 1 && menuSelection != 2 && menuSelection != 3 && menuSelection != 4) throw new Exception("Number must be between 1 and 4.");
                 }
