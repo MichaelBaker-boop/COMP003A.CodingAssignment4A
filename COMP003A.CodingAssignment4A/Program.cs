@@ -16,6 +16,8 @@ namespace COMP003A.CodingAssignment4
             List<string> productNames = new List<string>();
             List<int> productQuantities = new List<int>();
 
+            Console.WriteLine("Welcome to the Inventory Management Application!");
+
             bool menu = true;
             while (menu)
             {
@@ -96,16 +98,17 @@ namespace COMP003A.CodingAssignment4
                     Console.WriteLine("Inventory Summary: ");
                     for (int i = 0; i < productNames.Count; i++)
                     {
-                        Console.WriteLine($"{productNames[i]}"+$" {productQuantities[i]}");
+                        Console.WriteLine($"{productNames[i]}"+$" {productQuantities[i]}\n");
                     }
 
-                    int totalProducts = productNames.Count;
-                    Console.WriteLine($"Total Products:{totalProducts}");
+                    double totalProducts = productNames.Count;
+                    Console.WriteLine($"Total Products:{totalProducts} ");
 
-                    int totalInventory = productQuantities.Sum();
-                    Console.WriteLine($"Total Quantity:{totalInventory}");
+                    double totalInventory = productQuantities.Sum();
+                    Console.WriteLine($"Total Quantity:{totalInventory} ");
 
-
+                    double averageInventory = totalInventory / totalProducts;
+                    Console.WriteLine($"Average Quantity: {averageInventory} ");
 
                 }
 
@@ -113,6 +116,7 @@ namespace COMP003A.CodingAssignment4
 
                 if (menuSelection == 4)
                 {
+                    Console.WriteLine("Goodbye and have a wonderful day!");
                     menu = false;
                 }
 
