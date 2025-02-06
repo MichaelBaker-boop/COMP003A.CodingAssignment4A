@@ -11,8 +11,8 @@ namespace COMP003A.CodingAssignment4
         {
 
             int menuSelection;
-            new List<string>();
-            new List<int>();
+            List<string> productNames = new List<string>();
+            List<int> productQuantities = new List<int>();
 
             bool menu = true;
             while (menu)
@@ -34,6 +34,10 @@ namespace COMP003A.CodingAssignment4
                     throw;
                 }
 
+                if (menuSelection == 1)
+                {
+                    Console.WriteLine("Name of product:");
+                }
 
             }
 
