@@ -10,28 +10,31 @@ namespace COMP003A.CodingAssignment4
         static void Main(string[] args)
         {
 
-            int menuSelection;
+            int menuSelection = 0;
             List<string> productNames = new List<string>();
             List<int> productQuantities = new List<int>();
 
             bool menu = true;
             while (menu)
             {
+
+
                 // Create a menu and ask for choice from user
                 Console.WriteLine("Menu: ");
                 Console.WriteLine("1) Add a Product.");
                 Console.WriteLine("2) Update Product Quantity.");
                 Console.WriteLine("3) View Inventory Summary.");
                 Console.WriteLine("4) Exit.");
-
                 try 
                 {
                     Console.Write("Enter the number of your choice: ");
                     menuSelection = int.Parse(Console.ReadLine());
+                    if (menuSelection != 1 || menuSelection != 2 || menuSelection != 3 || menuSelection != 4) throw new Exception("Number must be between 1 and 4.");
                 }
-                catch
+                catch (Exception e)
                 {
                     Console.WriteLine("The input was invalid.");
+                    Console.WriteLine(e.Message);
                 }
 
                 if (menuSelection == 1)
